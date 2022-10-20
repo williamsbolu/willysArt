@@ -109,13 +109,11 @@ h3 {
   @media only screen and (max-width: 48em) {
     .card {
       min-width: 300px;
-      max-width: 350px;
-      grid-template-rows: 35rem min-content; } }
+      max-width: 350px; } }
   @media only screen and (max-width: 36em) {
     .card {
       min-width: 250px;
-      max-width: 300px;
-      grid-template-rows: 28rem min-content; } }
+      max-width: 300px; } }
   .card .card__picture {
     background-size: cover;
     background-position: center; }
