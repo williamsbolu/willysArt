@@ -123,34 +123,35 @@ h3 {
       margin-top: 1rem; }
 
 .howto {
-  max-width: 860px;
+  max-width: 86rem;
   margin: 0 auto;
   max-height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, minmax(min-content, 1fr)); }
   @media only screen and (max-width: 48em) {
     .howto {
       grid-template-rows: repeat(5, min-content); } }
-  @media only screen and (max-width: 36em) {
-    .howto {
-      grid-template-columns: min-content max-content min-content; } }
   .howto__img {
     width: 100%;
     grid-row: 1 / -1;
     grid-column: 2 / 3; }
-    @media only screen and (max-width: 36em) {
+    @media only screen and (max-width: 48em) {
       .howto__img {
         height: 100%;
-        object-fit: cover;
-        grid-row: 1 / 5; } }
-  .howto__box {
-    text-align: right; }
+        object-fit: cover; } }
+  @media only screen and (max-width: 48em) {
+    .howto__box {
+      transform: scale(0.9); } }
+  @media only screen and (max-width: 36em) {
+    .howto__box {
+      transform: scale(0.8); } }
   .howto__header {
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 1rem; }
     @media only screen and (max-width: 36em) {
       .howto__header {
-        font-weight: 500;
         font-size: 1.8rem;
         margin-bottom: .2rem; } }
   .howto__text {
@@ -160,38 +161,53 @@ h3 {
       .howto__text {
         font-size: 1.45rem; } }
   .howto__box--1 {
-    align-self: center; }
+    align-self: center;
+    text-align: right;
+    padding-right: 1.5rem; }
     @media only screen and (max-width: 36em) {
       .howto__box--1 {
-        align-self: start; } }
+        align-self: start;
+        padding: 0; } }
   .howto__box--2 {
     grid-row: 2 / 3;
     grid-column: 3 / -1;
-    align-self: center; }
+    align-self: center;
+    text-align: left;
+    padding-left: 1.5rem; }
     @media only screen and (max-width: 36em) {
       .howto__box--2 {
-        align-self: start; } }
+        align-self: start;
+        padding: 0; } }
   .howto__box--3 {
     grid-row: 3 / 4;
     grid-column: 1 / 2;
-    align-self: center; }
+    align-self: center;
+    text-align: right;
+    padding-right: 1.5rem; }
     @media only screen and (max-width: 36em) {
       .howto__box--3 {
-        align-self: start; } }
+        align-self: start;
+        padding: 0; } }
   .howto__box--4 {
     grid-row: 4 / 5;
     grid-column: 3 / -1;
-    align-self: center; }
+    align-self: center;
+    text-align: left;
+    padding-left: 1.5rem; }
     @media only screen and (max-width: 36em) {
       .howto__box--4 {
-        align-self: start; } }
+        align-self: start;
+        padding: 0; } }
   .howto__box--5 {
     grid-row: 5 / 6;
     grid-column: 1 / 2;
-    align-self: center; }
+    align-self: center;
+    text-align: right;
+    padding-right: 1.5rem; }
     @media only screen and (max-width: 36em) {
       .howto__box--5 {
-        align-self: start; } }
+        align-self: start;
+        padding: 0; } }
 
 .info {
   display: grid;
