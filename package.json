@@ -1,0 +1,14 @@
+{
+  "name": "willysart-portfolio-2023",
+  "version": "1.0.0",
+  "description": "art",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/main.css -w"
+  },
+  "author": "williams",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.3"
+  }
+}
