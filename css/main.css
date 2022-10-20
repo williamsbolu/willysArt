@@ -42,6 +42,9 @@ h3 {
 .container {
   max-width: 116rem;
   margin: 0 auto; }
+  @media only screen and (max-width: 75em) {
+    .container {
+      padding: 0 2rem; } }
 
 .u-center-text {
   text-align: center !important; }
@@ -90,11 +93,29 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   grid-gap: 4rem; }
+  @media only screen and (max-width: 60em) {
+    .card__container {
+      display: flex;
+      overflow-x: auto; } }
 
 .card {
   background-color: #222222;
   display: grid;
   grid-template-rows: 40rem min-content; }
+  @media only screen and (max-width: 60em) {
+    .card {
+      min-width: 350px;
+      max-width: 400px; } }
+  @media only screen and (max-width: 48em) {
+    .card {
+      min-width: 300px;
+      max-width: 350px;
+      grid-template-rows: 35rem min-content; } }
+  @media only screen and (max-width: 36em) {
+    .card {
+      min-width: 250px;
+      max-width: 300px;
+      grid-template-rows: 28rem min-content; } }
   .card .card__picture {
     background-size: cover;
     background-position: center; }
