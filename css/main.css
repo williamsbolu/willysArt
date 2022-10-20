@@ -229,7 +229,14 @@ h3 {
       font-weight: 500; }
 
 .recent {
-  display: flex; }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); }
+  @media only screen and (max-width: 60em) {
+    .recent {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media only screen and (max-width: 48em) {
+    .recent {
+      grid-template-columns: 1fr; } }
   .recent__item {
     position: relative;
     cursor: pointer; }
@@ -239,6 +246,9 @@ h3 {
     object-fit: cover;
     transition: opacity .4s;
     opacity: 0.9; }
+    @media only screen and (max-width: 60em) {
+      .recent__img {
+        opacity: 0.7; } }
   .recent__icon {
     position: absolute;
     top: 50%;
@@ -249,6 +259,10 @@ h3 {
     fill: #fff;
     width: 7rem;
     height: 7rem; }
+    @media only screen and (max-width: 60em) {
+      .recent__icon {
+        opacity: 1;
+        transform: translate(-50%, -50%); } }
   .recent__item:hover .recent__icon {
     opacity: 1;
     transform: translate(-50%, -50%); }
