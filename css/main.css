@@ -29,6 +29,9 @@ h1 {
   font-weight: 600;
   word-spacing: .5rem;
   line-height: 1.2; }
+  @media only screen and (max-width: 36em) {
+    h1 {
+      font-size: 4.4rem; } }
 
 h2 {
   font-size: 2.8rem;
@@ -389,6 +392,9 @@ h3 {
 
 .text-box {
   width: 60%; }
+  @media only screen and (max-width: 36em) {
+    .text-box {
+      width: 100%; } }
 
 .text-box a {
   margin-top: 2.5rem; }
@@ -430,6 +436,9 @@ h3 {
 .section-ready {
   padding: 5.5rem 0;
   background-image: linear-gradient(149deg, #108eb6, #b4e8f8); }
+  @media only screen and (max-width: 36em) {
+    .section-ready {
+      padding: 4.5rem 0; } }
   .section-ready .ready-container {
     text-align: center; }
   .section-ready h3 {
@@ -440,6 +449,10 @@ h3 {
     border-bottom: 1px solid #DCF2F4;
     line-height: normal;
     margin-bottom: 1rem; }
+    @media only screen and (max-width: 36em) {
+      .section-ready h3 {
+        font-size: 2.2rem;
+        margin-bottom: 1.2rem; } }
   .section-ready h2 {
     color: #DCF2F4;
     display: block;
@@ -447,6 +460,9 @@ h3 {
     font-size: 5.5rem;
     font-weight: 600;
     margin-bottom: .3rem; }
+    @media only screen and (max-width: 36em) {
+      .section-ready h2 {
+        font-size: 3.4rem; } }
   .section-ready p {
     color: #DCF2F4;
     display: block;
