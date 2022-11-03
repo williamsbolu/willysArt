@@ -159,7 +159,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.8rem 0;
+  padding: 0rem 0 2rem 0;
   border-bottom: 1px solid #ffffff26; }
 
 .collapsible__heading {
@@ -197,6 +197,7 @@ h3 {
 
 .collapsible__expanded .collapsible__content {
   max-height: 100vh;
+  margin-bottom: .5rem;
   /* maximum of 100vh but its not going to strech more than its content */
   overflow: visible;
   opacity: 1; }
@@ -530,3 +531,7 @@ h3 {
 
 .section-faqs {
   padding: 4rem 0; }
+
+.section-footer {
+  background-color: #1A1A1A;
+  padding: 5rem; }
