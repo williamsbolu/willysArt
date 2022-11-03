@@ -1,0 +1,61 @@
+.form {
+    max-width: 65rem;
+    margin: 0 auto;
+
+    @media only screen and (max-width: $bp-1200px) {
+        padding: 0 2rem;
+    }
+
+    .form__container {
+
+    }
+
+    &__box {
+        margin-bottom: 1.6rem;
+    }
+
+    &__label {
+        display: block;
+        font-family: inherit;
+        margin-bottom: .2rem;
+        font-size: 1.6rem; 
+        color: #dcf2f4ac;
+    }
+
+    &__input {
+        border: none;
+        display: block;
+        width: 100%;
+        padding: 1.3rem 1rem;
+        border-radius: .5rem;
+        background-color: #222;
+        color: $text-color;
+        font-size: 1.6rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__button {
+        border: none;
+        width: 100%;
+        padding: 1.5rem 0;
+        background-color: $color-primary;
+        color: $text-color;
+        border-radius: .5rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color .3s;
+        font-family: inherit;
+
+        &:hover {
+            background-color: #222;
+        }
+    }
+}
+
+#message {
+    margin-top: 1.5rem;
+}
