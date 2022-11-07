@@ -14,7 +14,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0rem 0 2rem 0;
+        padding-bottom: 2rem;
         border-bottom: 1px solid #ffffff26;
     }
 
@@ -47,8 +47,9 @@
 
     &__content {
         // font-weight: 500;
-        font-size: 1.6rem;
-        padding: 1.2rem 0;
+        font-size: 1.8rem;
+        // padding: 1.2rem 0;
+        padding: 1.2rem 0 1.5rem 0;
         color: rgba($text-color, .7);
 
         max-height: 0;
@@ -63,7 +64,6 @@
 
     &__expanded &__content { 
         max-height: 100vh;
-        margin-bottom: .5rem;
         /* maximum of 100vh but its not going to strech more than its content */
         overflow: visible;
         opacity: 1;

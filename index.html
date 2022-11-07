@@ -87,7 +87,7 @@
         </div>
 
         <div class="container card__container">
-            <div class="card">
+            <div class="card" data-modal="modal-1">
                 <div class="card__picture card__picture--1">
                 </div>
                 <div class="card__content">
@@ -96,7 +96,7 @@
                     <a href="" class="btn btn--primary">More</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" data-modal="modal-2">
                 <div class="card__picture card__picture--2">
                 </div>
                 <div class="card__content">
@@ -106,7 +106,7 @@
                     <a href="" class="btn btn--primary">More</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" data-modal="modal-3">
                 <div class="card__picture card__picture--3">
                 </div>
                 <div class="card__content">
@@ -115,7 +115,7 @@
                     <a href="" class="btn btn--primary">More</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" data-modal="modal-4">
                 <div class="card__picture card__picture--4">
                 </div>
                 <div class="card__content">
@@ -133,25 +133,25 @@
         </div>
 
         <div class="recent">
-            <figure class="recent__item">
+            <figure class="recent__item" data-src="img/2. Converting Our CSS Code to Sass Variables and Nesting.mp4">
                 <img src="./img/no-limits.jpg" class="recent__img" alt="img">
                 <svg class="recent__icon">
                     <use xlink:href="img/sprite.svg#icon-play-alt"></use>
                 </svg>
             </figure>
-            <figure class="recent__item">
+            <figure class="recent__item" data-src="img/420.mp4">
                 <img src="./img/AFro-beats-vibe.jpg" class="recent__img" alt="img">
                 <svg class="recent__icon">
                     <use xlink:href="img/sprite.svg#icon-play-alt"></use>
                 </svg>
             </figure>
-            <figure class="recent__item">
+            <figure class="recent__item" data-src="img/421.mp4">
                 <img src="./img/no-limits.jpg" class="recent__img" alt="img">
                 <svg class="recent__icon">
                     <use xlink:href="img/sprite.svg#icon-play-alt"></use>
                 </svg>
             </figure>
-            <figure class="recent__item">
+            <figure class="recent__item" data-src="img/422.mp4">
                 <img src="./img/spaceships-img.jpg" class="recent__img" alt="img">
                 <svg class="recent__icon">
                     <use xlink:href="img/sprite.svg#icon-play-alt"></use>
@@ -294,8 +294,56 @@
     </section>
 
     <footer class="section-footer">
-        
+        <p></p>
     </footer>
+
+    <div class="img-container">
+        <img src="img/ifeoma x.jpg" alt="" class="modal-1">
+        <img src="img/green speechxxxx.jpg" alt="" class="modal-1">
+        <img src="img/AFro-beats-vibe.jpg" alt="" class="modal-1">
+        <img src="img/guchi NEW.jpg" alt="" class="modal-2">
+        <img src="img/hot cake.jpg" alt="" class="modal-2">
+        <img src="img/no-limits.jpg" alt="" class="modal-2">
+        <img src="img/greatness xx-min.jpg" alt="" class="modal-3">
+        <img src="img/IllustrationNBB.jpg" alt="" class="modal-3">
+        <img src="img/AFro-beats-vibe.jpg" alt="" class="modal-4">
+        <img src="img/mathematic.tv.png" alt="" class="modal-4">
+    </div>
+
+    <div class="modal remove-display" id="modal">
+        <button class="modal__button--cancel">
+            <svg class="modal__icon-cancel">
+                <use xlink:href="img/sprite.svg#icon-clear"></use>
+            </svg>
+        </button>
+        <div class="modal__content">
+            <button class="modal__button modal__button--prev">
+                <svg class="modal__icon-navigate">
+                    <use xlink:href="img/sprite.svg#icon-navigate_before"></use>
+                </svg>
+            </button>
+    
+            <img src="img/no-limits.jpg" alt="img" class="modal__img remove-image">
+    
+            <button class="modal__button modal__button--next">
+                <svg class="modal__icon-navigate">
+                    <use xlink:href="img/sprite.svg#icon-navigate_next"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="video remove-display">
+        <button class="video__button--cancel">
+            <svg class="video__icon-cancel">
+                <use xlink:href="img/sprite.svg#icon-clear"></use>
+            </svg>
+        </button>
+        <video class="video__content remove-video" autoplay controls>
+            <source src="" type="video/mp4">
+            Your browser is not supported!
+        </video>
+    </div>
 
     <script src="js/main.js"></script>
 </body>

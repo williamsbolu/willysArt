@@ -1,0 +1,136 @@
+.modal {
+    height: 100vh; 
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .8);
+    z-index: 9;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    
+    @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+        // IF HE BROWSER SUPPORTS THE CLASS
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px); // NEW CLASS
+        background-color: rgba($color-black, .3);
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+
+        // @media only screen and (max-width: $bp-900px) {
+        //     position: relative;
+        // }
+    }
+
+    &__button--cancel {
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        border: none;
+        background-color: transparent;
+    }
+
+    &__button {
+        border: none;
+        border-radius: 50%;
+        padding: .5rem;
+        background: #fff;
+        margin: 0 2rem;
+        cursor: pointer;
+        z-index: 10;
+
+        @media only screen and (max-width: $bp-900px) {
+            margin: 0;
+        }
+
+        &--prev {
+
+            @media only screen and (max-width: $bp-900px) {
+                position: absolute;
+                left: 3rem;
+            }
+
+            @media only screen and (max-width: $bp-768px) {
+                left: 2.5rem;
+            }
+
+            @media only screen and (max-width: $bp-small) {
+                left: 1rem;
+            }
+        }
+
+        &--next {
+
+            @media only screen and (max-width: $bp-900px) {
+                position: absolute;
+                right: 3rem;
+            }
+
+            @media only screen and (max-width: $bp-768px) { 
+                right: 2.5rem;
+            }
+
+            @media only screen and (max-width: $bp-small) { 
+                right: 1rem;
+            }
+        }
+    }
+
+    &__icon-navigate {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: #333;
+    }
+
+    &__icon-cancel {
+        width: 3.5rem;
+        height: 3.5rem;
+        fill: #ffffffdd;
+    }
+
+    &__img {
+        max-width: 650px;
+
+        @media only screen and (max-width: $bp-900px) {
+            max-width: 600px;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            max-width: 100%;
+        }
+    }
+}
+
+.img-container {
+    display: none;
+}
+
+.remove-display {
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s .2s;  
+}
+
+.add-display {
+    opacity: 1;
+    visibility: visible;
+    transition: all .3s;
+}
+
+.remove-image {
+    transform: translateY(10rem);
+    opacity: 0;
+    transition: all .5s;
+}
+
+.add-image {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all .4s .2s;
+}

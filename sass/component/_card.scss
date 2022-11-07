@@ -12,8 +12,10 @@
 .card {
     background-color: #222222;
     // background-color: #1F2224;
+    cursor: pointer;
     display: grid;
     grid-template-rows: 40rem min-content;
+    transition: transform .3s;
 
     @media only screen and (max-width: $bp-960px) {
         min-width: 350px;
@@ -23,6 +25,10 @@
     @media only screen and (max-width: $bp-768px) {
         min-width: 290px;
         max-width: 350px;
+    }
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
     }
 
     .card__picture {
