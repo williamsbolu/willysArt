@@ -544,6 +544,9 @@ h3 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); }
+    @media only screen and (max-width: 56.25em) {
+      .video__content {
+        max-width: 100%; } }
   .video__button--cancel {
     cursor: pointer;
     position: absolute;
