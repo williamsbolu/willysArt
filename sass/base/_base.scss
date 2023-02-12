@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after { 
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}

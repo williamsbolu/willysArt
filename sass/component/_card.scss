@@ -1,0 +1,68 @@
+.card__container {
+    max-width: $container-width;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    grid-gap: 4rem;
+
+    @media only screen and (max-width: $bp-960px) {
+        display: none;
+    }
+}
+
+.card {
+    background-color: #1a1a1a;
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: 40rem min-content;
+    transition: transform .3s;
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+
+    .card__picture {
+        background-size: cover;
+        background-position: center;
+
+        &--1 {
+            background-image: url(../../img/no-limits.jpg);
+        }
+
+        &--2 {
+            background-image: url(../../img//spaceships-img.jpg);
+        }
+
+        &--3 {
+            background-image: url(../../img/samba.jpg);
+        }
+
+        &--4 {
+            background-image: url(../../img/AFro-beats-vibe.jpg);
+        }
+    }
+
+    .card__content {
+        padding: 2rem;
+
+        display: grid;
+        grid-template-rows: min-content 6rem min-content;
+        grid-row-gap: 1.2rem;
+
+        & h3 {
+            font-weight: 600;
+            font-size: 1.7rem;
+            text-transform: uppercase;
+        }
+
+        & p {
+            color: lighten($text-color, 7%);
+            font-size: 1.4rem;
+        }
+
+        & a {
+            justify-self: start;
+            margin-top: 1rem;
+        }
+    }
+}
