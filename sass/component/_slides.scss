@@ -104,13 +104,37 @@
     }
 
     .slider__btn--left {
-        left: 0;
+        left: 10rem;
         transform: translate(-50%, -50%);
+
+        @media only screen and (max-width: $bp-900px) {
+            left: 6rem;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            left: 4rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            left: 3.5rem;
+        }
     }
 
     .slider__btn--right {
-        right: 0;
+        right: 10rem;
         transform: translate(50%, -50%);
+
+        @media only screen and (max-width: $bp-900px) {
+            right: 6rem;
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            right: 4rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            right: 3.5rem;
+        }
     }
 
     .dots {

@@ -1,5 +1,6 @@
 //////////////////   Modal for the works section. ////////////////////////////////
 const cardsContainer = document.querySelector(".card__container");
+const slidesContainer = document.querySelector(".slides");
 const modal = document.querySelector(".modal");
 const modalImg = document.querySelector(".modal__img");
 
@@ -11,16 +12,9 @@ let indexNo = 0;
 let curModalImgArr = null;
 // console.log(curModalImgArr);
 
-cardsContainer.addEventListener("click", function (e) {
-  // if we click on the btn link.. return
-  if (e.target.classList.contains("btn")) return;
-
-  const cardElement = e.target.closest(".card");
-
-  if (!cardElement) return; // if we dont get d card modal element
-
+const galleryHandler = (element) => {
   const imagesArr = Array.from(
-    document.querySelectorAll(`.${cardElement.dataset.modal}`)
+    document.querySelectorAll(`.${element.dataset.modal}`)
   );
 
   console.log(imagesArr);
@@ -40,6 +34,28 @@ cardsContainer.addEventListener("click", function (e) {
   modalImg.classList.add("add-image");
 
   curModalImgArr = imagesArr;
+};
+
+cardsContainer.addEventListener("click", function (e) {
+  // if we click on the btn link.. return
+  if (e.target.classList.contains("btn")) return;
+
+  const cardElement = e.target.closest(".card");
+
+  if (!cardElement) return; // if we dont get d card modal element
+
+  galleryHandler(cardElement);
+});
+
+slidesContainer.addEventListener("click", function (e) {
+  // if we click on the btn link.. return
+  if (e.target.classList.contains("btn")) return;
+
+  const slidesElement = e.target.closest(".slide");
+
+  if (!slidesElement) return; // if we dont get d card modal element
+
+  galleryHandler(slidesElement);
 });
 
 cancelBtn.addEventListener("click", function (e) {
@@ -238,13 +254,13 @@ const slider = function () {
 
 slider();
 
-const mediaQueryHigh = window.matchMedia("(min-width: 960px)");
+// const mediaQueryHigh = window.matchMedia("(min-width: 960px)");
 
-if (mediaQueryHigh.matches) {
-  slides.forEach((s, i) => (s.style.transform = `translateX(0)`));
-}
+// if (mediaQueryHigh.matches) {
+//   slides.forEach((s, i) => (s.style.transform = `translateX(0)`));
+// }
 
-if (mediaQuery.matches) {
-  slider();
-  console.log("matched");
-}
+// if (mediaQuery.matches) {
+//   slider();
+//   console.log("matched");
+// }

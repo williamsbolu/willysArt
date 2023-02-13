@@ -427,6 +427,9 @@ h3 {
   transform: translateY(10rem);
   opacity: 0;
   transition: all .5s; }
+  @media only screen and (max-width: 37.5em) {
+    .remove-image {
+      transform: translateY(5rem); } }
 
 .add-image {
   transform: translateY(0);
@@ -544,11 +547,33 @@ h3 {
     font-size: 3.25rem;
     cursor: pointer; }
   .slider__btn--left {
-    left: 6%;
-    transform: translate(-50%, -50%); }
+    left: 10rem;
+    transform: translate(-50%, -50%); } }
+  @media only screen and (max-width: 60em) and (max-width: 56.25em) {
+    .slider__btn--left {
+      left: 6rem; } }
+  @media only screen and (max-width: 60em) and (max-width: 50em) {
+    .slider__btn--left {
+      left: 4rem; } }
+  @media only screen and (max-width: 60em) and (max-width: 37.5em) {
+    .slider__btn--left {
+      left: 3.5rem; } }
+
+@media only screen and (max-width: 60em) {
   .slider__btn--right {
-    right: 6%;
-    transform: translate(50%, -50%); }
+    right: 10rem;
+    transform: translate(50%, -50%); } }
+  @media only screen and (max-width: 60em) and (max-width: 56.25em) {
+    .slider__btn--right {
+      right: 6rem; } }
+  @media only screen and (max-width: 60em) and (max-width: 50em) {
+    .slider__btn--right {
+      right: 4rem; } }
+  @media only screen and (max-width: 60em) and (max-width: 37.5em) {
+    .slider__btn--right {
+      right: 3.5rem; } }
+
+@media only screen and (max-width: 60em) {
   .dots {
     position: absolute;
     bottom: 5%;
