@@ -498,7 +498,7 @@ h3 {
     cursor: pointer;
     display: grid;
     grid-template-rows: 40rem min-content;
-    transition: transform .3s;
+    transition: transform .7s;
     position: absolute;
     top: 0;
     width: 100%;
@@ -542,8 +542,7 @@ h3 {
     font-family: inherit;
     color: #333;
     border-radius: 50%;
-    height: 5rem;
-    width: 5rem;
+    padding: .7rem 1rem;
     font-size: 3.25rem;
     cursor: pointer;
     display: flex;
@@ -585,7 +584,7 @@ h3 {
     display: flex; }
   .dots__dot {
     border: none;
-    background-color: #b9b9b9;
+    background-color: #b9b9b9ae;
     opacity: 0.7;
     height: 1rem;
     width: 1rem;
