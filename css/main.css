@@ -172,6 +172,9 @@ h3 {
   text-transform: none;
   font-weight: 500;
   font-size: 2.2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .collapsible__heading {
+      font-size: 2rem; } }
 
 .collapsible__button {
   background-color: #ee2a6d;
@@ -692,6 +695,18 @@ h3 {
 .text-box a {
   margin-top: 2.5rem; }
 
+.section-display {
+  padding: 9rem 4rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../img/lil-nax-background.jpg);
+  background-position-x: right;
+  background-position-y: bottom;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .section-display .display-box {
+    width: 40%; }
+    .section-display .display-box p {
+      font-size: 1.6rem; }
+
 .section__header {
   width: 60%;
   margin: 0 auto; }
@@ -772,4 +787,7 @@ h3 {
 
 .section-footer {
   background-color: #1A1A1A;
-  padding: 4rem; }
+  padding: 2rem 0; }
+  .section-footer p {
+    font-size: 1.8rem;
+    text-align: center; }

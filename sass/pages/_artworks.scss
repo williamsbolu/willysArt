@@ -1,0 +1,19 @@
+.section-display {
+    padding: 9rem 4rem;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../img/lil-nax-background.jpg);
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .display-box {
+        width: 40%;
+
+        & h1 {}
+
+        & p {
+            font-size: 1.6rem;
+            // text-align: center;
+        }
+    }
+}
