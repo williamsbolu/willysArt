@@ -1,19 +1,40 @@
 .section-display {
     padding: 9rem 4rem;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../img/lil-nax-background.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../img/lil-nax-background.jpg);
     background-position-x: right;
     background-position-y: bottom;
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 1rem;
 
     .display-box {
-        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
 
-        & h1 {}
+        & h1 {
+            font-size: 5rem;
+            color: #F6F3ED;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
 
         & p {
             font-size: 1.6rem;
-            // text-align: center;
+            width: 50%;
         }
+    }
+}
+
+.section-gallery {
+    margin-bottom: 4rem;
+
+    & h2 {
+        color: #F6F3ED;
+        text-transform: none;
+        font-weight: 600;
+        font-size: 3.2rem;
+        padding: 1.5rem 4rem;
     }
 }

@@ -1,6 +1,7 @@
 //////////////////   Modal for the works section. ////////////////////////////////
 const cardsContainer = document.querySelector(".card__container");
 const slidesContainer = document.querySelector(".slides");
+const galleryImg = document.querySelectorAll("gallery__img");
 const modal = document.querySelector(".modal");
 const modalImg = document.querySelector(".modal__img");
 
