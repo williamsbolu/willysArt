@@ -14,14 +14,14 @@
 .section-works {
     position: relative;
     // background-color: #1A1A1A;
-    padding: 5rem 0;
+    padding: 5rem 2rem;
 
     & h2 {
         margin-bottom: 1rem;
     }
 
     @media only screen and (max-width: $bp-1200px) {
-        padding: 5rem 0 9rem 0;
+        padding: 5rem 2rem 9rem 2rem;
     }
 }
 
