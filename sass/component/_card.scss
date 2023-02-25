@@ -19,6 +19,22 @@
 
     &:hover {
         transform: translateY(-1.5rem) scale(1.03);
+
+        @media only screen and (max-width: $bp-960px) {
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    &__slide {
+        max-width: 45rem;
+        margin: 0 auto;
+        display: none;
+
+        @media only screen and (max-width: $bp-960px) {
+            display: block;
+        }
+
+        @media only screen and (max-width: $bp-medium) {}
     }
 
     .card__picture {
@@ -65,4 +81,25 @@
             margin-top: 1rem;
         }
     }
+}
+
+.carousel {
+    position: static;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 3rem;
+}
+
+.carousel-control-prev {
+    top: 50%;
+    bottom: auto;
+    height: 15%;
+}
+
+.carousel-control-next {
+    top: 50%;
+    bottom: auto;
+    height: 15%;
 }

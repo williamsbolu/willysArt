@@ -9,6 +9,8 @@
     <title>Willysart - Digital artist</title>
 
     <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,700,500,600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -87,56 +89,78 @@
             </div>
         </div>
 
-        <div class="slides">
-            <div class="slide" data-modal="modal-1">
-                <div class="slide__picture slide__picture--1">
+        <div class="card__slide">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
                 </div>
-                <div class="slide__content">
-                    <h3>Illustrations</h3>
-                    <p>Bringing your ideas into reality.</p>
-                    <a href="" class="btn btn--primary">More</a>
+                <div class="carousel-inner">
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <div class="card" data-modal="modal-1">
+                            <div class="card__picture card__picture--1">
+                            </div>
+                            <div class="card__content">
+                                <h3>Illustrations</h3>
+                                <p>Bringing your ideas into reality.</p>
+                                <a href="" class="btn btn--primary">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item active" data-bs-interval="5000">
+                        <div class="card" data-modal="modal-2">
+                            <div class="card__picture card__picture--2">
+                            </div>
+                            <div class="card__content">
+                                <h3>Cover Arts</h3>
+                                <p>Different styles of artworks for various artist music covers, album art. From
+                                    realistic to 2D
+                                    artworks.</p>
+                                <a href="" class="btn btn--primary">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <div class="card" data-modal="modal-3">
+                            <div class="card__picture card__picture--3">
+                            </div>
+                            <div class="card__content">
+                                <h3>Logo/Posters</h3>
+                                <p>Artworks defining the face of your brand and event.</p>
+                                <a href="" class="btn btn--primary">More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="5000">
+                        <div class="card" data-modal="modal-4">
+                            <div class="card__picture card__picture--4">
+                            </div>
+                            <div class="card__content">
+                                <h3>Merch</h3>
+                                <p>Coming soon!</p>
+                                <a href="" class="btn btn--primary">More</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="slide" data-modal="modal-2">
-                <div class="slide__picture slide__picture--2">
-                </div>
-                <div class="slide__content">
-                    <h3>Cover Arts</h3>
-                    <p>Different styles of artworks for various artist music covers, album art. From realistic to 2D
-                        artworks.</p>
-                    <a href="" class="btn btn--primary">More</a>
-                </div>
-            </div>
-            <div class="slide" data-modal="modal-3">
-                <div class="slide__picture slide__picture--3">
-                </div>
-                <div class="slide__content">
-                    <h3>Logo/Posters</h3>
-                    <p>Artworks defining the face of your brand and event.</p>
-                    <a href="" class="btn btn--primary">More</a>
-                </div>
-            </div>
-            <div class="slide" data-modal="modal-4">
-                <div class="slide__picture slide__picture--4">
-                </div>
-                <div class="slide__content">
-                    <h3>Merch</h3>
-                    <p>Coming soon!</p>
-                    <a href="" class="btn btn--primary">More</a>
-                </div>
+                <button class="carousel-control-prev d-none d-sm-block" type="button"
+                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next d-none d-sm-block" type="button"
+                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
-        <button class="slider__btn slider__btn--left">
-            <svg class="slider__icon">
-                <use xlink:href="img/sprite.svg#icon-arrow-left"></use>
-            </svg>
-        </button>
-        <button class="slider__btn slider__btn--right">
-            <svg class="slider__icon">
-                <use xlink:href="img/sprite.svg#icon-arrow-right"></use>
-            </svg>
-        </button>
-        <div class="dots"></div>
     </section>
 
     <section class="section-recent">
@@ -366,6 +390,9 @@
         </video>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
 </body>
 

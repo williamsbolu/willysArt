@@ -1,7 +1,7 @@
 //////////////////   Modal for the works section. ////////////////////////////////
 const cardsContainer = document.querySelector(".card__container");
 const slidesContainer = document.querySelector(".slides");
-const galleryImg = document.querySelectorAll("gallery__img");
+const galleryImgs = Array.from(document.querySelectorAll(".gallery__img"));
 const modal = document.querySelector(".modal");
 const modalImg = document.querySelector(".modal__img");
 
@@ -13,10 +13,16 @@ let indexNo = 0;
 let curModalImgArr = null;
 // console.log(curModalImgArr);
 
-const galleryHandler = (element) => {
-  const imagesArr = Array.from(
-    document.querySelectorAll(`.${element.dataset.modal}`)
-  );
+const galleryHandler = (element, datasetIsValid = true, imgIndexNo = 0) => {
+  let imagesArr;
+
+  if (datasetIsValid) {
+    imagesArr = Array.from(
+      document.querySelectorAll(`.${element.dataset.modal}`)
+    );
+  } else {
+    imagesArr = Array.from(document.querySelectorAll(`.${element}`));
+  }
 
   console.log(imagesArr);
 
@@ -26,6 +32,9 @@ const galleryHandler = (element) => {
   // display the modal
   modal.classList.remove("remove-display");
   modal.classList.add("add-display");
+
+  // update the index current index no.
+  indexNo += imgIndexNo;
 
   // add the src
   modalImg.src = imagesArr[indexNo].src;
@@ -37,26 +46,38 @@ const galleryHandler = (element) => {
   curModalImgArr = imagesArr;
 };
 
-cardsContainer.addEventListener("click", function (e) {
-  // if we click on the btn link.. return
-  if (e.target.classList.contains("btn")) return;
+if (cardsContainer) {
+  cardsContainer.addEventListener("click", function (e) {
+    // if we click on the btn link.. return
+    if (e.target.classList.contains("btn")) return;
 
-  const cardElement = e.target.closest(".card");
+    const cardElement = e.target.closest(".card");
 
-  if (!cardElement) return; // if we dont get d card modal element
+    if (!cardElement) return; // if we dont get d card modal element
 
-  galleryHandler(cardElement);
-});
+    galleryHandler(cardElement);
+  });
+}
 
-slidesContainer.addEventListener("click", function (e) {
-  // if we click on the btn link.. return
-  if (e.target.classList.contains("btn")) return;
+if (slidesContainer) {
+  slidesContainer.addEventListener("click", function (e) {
+    // if we click on the btn link.. return
+    if (e.target.classList.contains("btn")) return;
 
-  const slidesElement = e.target.closest(".slide");
+    const slidesElement = e.target.closest(".slide");
 
-  if (!slidesElement) return; // if we dont get d card modal element
+    if (!slidesElement) return; // if we dont get d card modal element
 
-  galleryHandler(slidesElement);
+    galleryHandler(slidesElement);
+  });
+}
+
+galleryImgs.forEach((cur) => {
+  cur.addEventListener("click", () => {
+    const currentIndexNo = galleryImgs.indexOf(cur);
+
+    galleryHandler("gallery__img", false, currentIndexNo);
+  });
 });
 
 cancelBtn.addEventListener("click", function (e) {
@@ -103,64 +124,70 @@ const videoContainer = document.querySelector(".video");
 const videoContent = document.querySelector(".video__content");
 const videoBtn = document.querySelector(".video__button--cancel");
 
-recentContainer.addEventListener("click", function (e) {
-  const item = e.target.closest(".recent__item");
+if (recentContainer) {
+  recentContainer.addEventListener("click", function (e) {
+    const item = e.target.closest(".recent__item");
 
-  if (!item) return;
+    if (!item) return;
 
-  // stops the body scrolling
-  document.body.classList.add("stop-scrolling");
+    // stops the body scrolling
+    document.body.classList.add("stop-scrolling");
 
-  // display the modal
-  videoContainer.classList.remove("remove-display");
-  videoContainer.classList.add("add-display");
+    // display the modal
+    videoContainer.classList.remove("remove-display");
+    videoContainer.classList.add("add-display");
 
-  // add the src
-  videoContent.src = item.dataset.src;
+    // add the src
+    videoContent.src = item.dataset.src;
 
-  // Animate the video
-  videoContent.classList.remove("remove-video");
-  videoContent.classList.add("add-video");
-});
+    // Animate the video
+    videoContent.classList.remove("remove-video");
+    videoContent.classList.add("add-video");
+  });
+}
 
-videoBtn.addEventListener("click", function (e) {
-  // Adds the body scrolling
-  document.body.classList.remove("stop-scrolling");
+if (videoBtn) {
+  videoBtn.addEventListener("click", function (e) {
+    // Adds the body scrolling
+    document.body.classList.remove("stop-scrolling");
 
-  // removes the modal
-  videoContainer.classList.remove("add-display");
-  videoContainer.classList.add("remove-display");
+    // removes the modal
+    videoContainer.classList.remove("add-display");
+    videoContainer.classList.add("remove-display");
 
-  // Animate the video
-  videoContent.classList.remove("add-video");
-  videoContent.classList.add("remove-video");
+    // Animate the video
+    videoContent.classList.remove("add-video");
+    videoContent.classList.add("remove-video");
 
-  // add the src
-  videoContent.src = "";
-});
+    // add the src
+    videoContent.src = "";
+  });
+}
 
 //////////////////   Collapsible for the faqs section  /////////////////////////////////
 const collapsiblesContainer = document.querySelector(".faqs");
 
-collapsiblesContainer.addEventListener("click", function (e) {
-  if (e.target.classList.contains("collapsible__content")) return;
+if (collapsiblesContainer) {
+  collapsiblesContainer.addEventListener("click", function (e) {
+    if (e.target.classList.contains("collapsible__content")) return;
 
-  const clicked = e.target.closest(".collapsible");
+    const clicked = e.target.closest(".collapsible");
 
-  if (!clicked) return;
+    if (!clicked) return;
 
-  clicked.classList.toggle("collapsible__expanded");
-});
+    clicked.classList.toggle("collapsible__expanded");
+  });
+}
 
 //////////////////////////////////////////////////////////////////
 // SLIDES
 
-const slider = function () {
-  const slides = document.querySelectorAll(".slide");
-  const btnLeft = document.querySelector(".slider__btn--left");
-  const btnRight = document.querySelector(".slider__btn--right");
-  const dotContainer = document.querySelector(".dots");
+const slides = document.querySelectorAll(".slide");
+const btnLeft = document.querySelector(".slider__btn--left");
+const btnRight = document.querySelector(".slider__btn--right");
+const dotContainer = document.querySelector(".dots");
 
+const slider = function () {
   // current slide
   let currentSlide = 0;
   const maxSlide = slides.length;
@@ -253,7 +280,9 @@ const slider = function () {
   });
 };
 
-slider();
+if ((slides, btnLeft, btnRight, dotContainer)) {
+  slider();
+}
 
 // const mediaQueryHigh = window.matchMedia("(min-width: 960px)");
 
