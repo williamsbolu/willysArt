@@ -9,6 +9,18 @@ const cancelBtn = document.querySelector(".modal__button--cancel");
 const prevButton = document.querySelector(".modal__button--prev");
 const nextButton = document.querySelector(".modal__button--next");
 
+// Video modal code
+const recentContainer = document.querySelector(".recent");
+const videoContainer = document.querySelector(".video");
+const videoContent = document.querySelector(".video__content");
+const videoBtn = document.querySelector(".video__button--cancel");
+
+// Collapsible for the faqs section
+const collapsiblesContainer = document.querySelector(".faqs");
+
+// hamburger
+const menuBtn = document.querySelector(".hamburger");
+
 let indexNo = 0;
 let curModalImgArr = null;
 // console.log(curModalImgArr);
@@ -119,11 +131,6 @@ nextButton.addEventListener("click", function () {
 });
 
 //////////////////    Video modal code    //////////////////////////////////
-const recentContainer = document.querySelector(".recent");
-const videoContainer = document.querySelector(".video");
-const videoContent = document.querySelector(".video__content");
-const videoBtn = document.querySelector(".video__button--cancel");
-
 if (recentContainer) {
   recentContainer.addEventListener("click", function (e) {
     const item = e.target.closest(".recent__item");
@@ -164,8 +171,32 @@ if (videoBtn) {
   });
 }
 
+// ------- Hamburger -----------//
+const nav = document.querySelector(".nav-menu");
+const navBtn = document.querySelector(".nav-cancel");
+const navLinks = document.querySelectorAll(".nav-menu__item");
+
+menuBtn.addEventListener("click", function () {
+  nav.classList.remove("nav-inactive");
+  nav.classList.add("nav-active");
+
+  navLinks.forEach((link, index) => {
+    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+  });
+});
+
+navBtn.addEventListener("click", function () {
+  navLinks.forEach((link, index) => {
+    link.style.animation = `navLinkFadeOut 0.5s ease forwards ${
+      index / 7 + 0.3
+    }s`;
+  });
+
+  nav.classList.remove("nav-active");
+  nav.classList.add("nav-inactive");
+});
+
 //////////////////   Collapsible for the faqs section  /////////////////////////////////
-const collapsiblesContainer = document.querySelector(".faqs");
 
 if (collapsiblesContainer) {
   collapsiblesContainer.addEventListener("click", function (e) {
@@ -177,111 +208,6 @@ if (collapsiblesContainer) {
 
     clicked.classList.toggle("collapsible__expanded");
   });
-}
-
-//////////////////////////////////////////////////////////////////
-// SLIDES
-
-const slides = document.querySelectorAll(".slide");
-const btnLeft = document.querySelector(".slider__btn--left");
-const btnRight = document.querySelector(".slider__btn--right");
-const dotContainer = document.querySelector(".dots");
-
-const slider = function () {
-  // current slide
-  let currentSlide = 0;
-  const maxSlide = slides.length;
-
-  //////  FUNCTIONS  ///////
-  const createDots = function () {
-    // Loop over the slides to create a button dot for each of them, with the slide data set to the index number
-    slides.forEach((_, i) => {
-      dotContainer.insertAdjacentHTML(
-        "beforeend",
-        `<button class="dots__dot" data-slide="${i}"></button>`
-      );
-    });
-  };
-
-  const activateDot = function (slide) {
-    // function for adding the active class to the dots based on d active slide number
-    document
-      .querySelectorAll(".dots__dot")
-      .forEach((dot) => dot.classList.remove("dots__dot--active"));
-
-    // selecting based the data attribute we use [].
-    // here we are selecting the element based on the data-slide attribute value.s
-    document
-      .querySelector(`.dots__dot[data-slide="${slide}"]`)
-      .classList.add("dots__dot--active");
-  };
-
-  const goToSlide = function (curSlide) {
-    // console.log(curSlide);
-    // slides.forEach((s, i) => s.style.transform = `translateX(${100 * i}%)`);
-    slides.forEach(
-      (s, i) => (s.style.transform = `translateX(${100 * (i - curSlide)}%)`)
-    );
-  };
-
-  // Next slide
-  const nextSlide = function () {
-    if (currentSlide === maxSlide - 1) {
-      currentSlide = 0; // restarts the slides
-    } else {
-      currentSlide++; // move to d next slide
-    }
-
-    // currentSlide = 0:  0% 100% 200% 300%
-    // currentSlide = 1: -100% 0% 100% 200%
-    // currentSlide = 2: -200% -100% 0% 100%
-    goToSlide(currentSlide);
-    activateDot(currentSlide);
-  };
-
-  const prevSlide = function () {
-    if (currentSlide === 0) {
-      currentSlide = maxSlide - 1;
-    } else {
-      currentSlide--;
-    }
-
-    goToSlide(currentSlide);
-    activateDot(currentSlide);
-  };
-
-  const init = function () {
-    goToSlide(0); // this here sets the first slide to 0 (default)
-
-    createDots();
-    activateDot(0); // set the dot to d first dot
-  };
-
-  init();
-
-  ///// EVENT HANDLERS /////
-  btnRight.addEventListener("click", nextSlide);
-  btnLeft.addEventListener("click", prevSlide);
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "ArrowLeft") prevSlide();
-    e.key === "ArrowRight" && nextSlide(); // short circuiting can also be used
-  });
-
-  dotContainer.addEventListener("click", function (e) {
-    // here we use (event deligation) again
-
-    if (e.target.classList.contains("dots__dot")) {
-      // if d element contains d class we specified
-      const { slide } = e.target.dataset;
-      goToSlide(slide);
-      activateDot(slide);
-    }
-  });
-};
-
-if ((slides, btnLeft, btnRight, dotContainer)) {
-  slider();
 }
 
 // const mediaQueryHigh = window.matchMedia("(min-width: 960px)");

@@ -52,10 +52,13 @@ nav {
     border: none;
     display: inline-block;
 
+    &:hover {
+        cursor: pointer;
+    }
 
     &__bar {
         display: block;
-        width: 5rem;
+        width: 3.5rem;
         height: .5rem;
         // transition: all 0.3s ease-in-out;
         background-color: #fff;
@@ -74,8 +77,8 @@ nav {
 // ------------- mobile nav ---------------//
 button.nav-cancel {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 2rem;
+    right: 1.2rem;
     background: #fff;
     padding: 1rem;
     border-radius: 50%;
@@ -94,6 +97,8 @@ button.nav-cancel svg {
     background-color: #111;
     z-index: 11;
 
+    transition: opacity .4s;
+
     &__list {
         list-style: none;
         position: absolute;
@@ -101,16 +106,19 @@ button.nav-cancel svg {
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        padding: 0;
     }
 
     &__item {
-        // margin-bottom: .5rem;
-        // border-top: 1px solid #222527;
-        // border-bottom: 1px solid #222527;
+        opacity: 0;
+
+        &:last-child {
+            margin-top: 4rem;
+        }
     }
 
     &__item:hover &__link {
-        color: #d3d3d3;
+        color: #bcbcbc;
     }
 
     &__link {
@@ -120,4 +128,27 @@ button.nav-cancel svg {
         font-weight: 600;
         width: 100%;
     }
+
+    &--icons {
+        display: inline-block;
+
+        &:first-child {
+            margin-right: 1rem;
+        }
+
+        &:hover svg {
+            fill: #bcbcbc;
+        }
+    }
+}
+
+.nav-inactive {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s;
+}
+
+.nav-active {
+    opacity: 1;
+    visibility: visible;
 }
