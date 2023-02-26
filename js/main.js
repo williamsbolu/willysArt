@@ -177,6 +177,9 @@ const navBtn = document.querySelector(".nav-cancel");
 const navLinks = document.querySelectorAll(".nav-menu__item");
 
 menuBtn.addEventListener("click", function () {
+  // stops the body scrolling
+  document.body.classList.add("stop-scrolling");
+
   nav.classList.remove("nav-inactive");
   nav.classList.add("nav-active");
 
@@ -194,6 +197,8 @@ navBtn.addEventListener("click", function () {
 
   nav.classList.remove("nav-active");
   nav.classList.add("nav-inactive");
+
+  document.body.classList.remove("stop-scrolling");
 });
 
 //////////////////   Collapsible for the faqs section  /////////////////////////////////

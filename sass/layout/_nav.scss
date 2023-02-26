@@ -1,5 +1,9 @@
 nav {
     position: relative;
+
+    @media only screen and (max-width: $bp-576px) {
+        padding: 0 5rem;
+    }
 }
 
 .logo {
@@ -7,6 +11,10 @@ nav {
     &__img {
         width: 15rem;
         margin: 4rem 0 4rem 0;
+    }
+
+    @media only screen and (max-width: $bp-576px) {
+        padding-left: 2rem;
     }
 }
 
@@ -51,6 +59,10 @@ nav {
     background: transparent;
     border: none;
     display: inline-block;
+
+    @media only screen and (max-width: $bp-576px) {
+        right: 3rem;
+    }
 
     &:hover {
         cursor: pointer;
