@@ -1,3 +1,7 @@
+nav {
+    position: relative;
+}
+
 .logo {
 
     &__img {
@@ -20,14 +24,14 @@
     padding: 0;
     padding: 0 1rem;
 
-    @media only screen and (max-width: $bp-576px) {
+    @media only screen and (max-width: $bp-768px) {
         display: none;
     }
-    
+
     & li:not(:last-child) {
         margin-right: 1.7rem;
     }
-    
+
     &--item {
         color: $text-color;
         text-decoration: none;
@@ -37,5 +41,83 @@
 
     &__link:last-child {
         margin-right: 2rem;
+    }
+}
+
+.hamburger {
+    position: absolute;
+    top: 35%;
+    right: 2rem;
+    background: transparent;
+    border: none;
+    display: inline-block;
+
+
+    &__bar {
+        display: block;
+        width: 5rem;
+        height: .5rem;
+        // transition: all 0.3s ease-in-out;
+        background-color: #fff;
+    }
+
+    &__bar:nth-child(2) {
+        margin: .8rem 0;
+    }
+
+    &:focus {
+        outline: none;
+        border: 1px solid #000;
+    }
+}
+
+// ------------- mobile nav ---------------//
+button.nav-cancel {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+button.nav-cancel svg {
+    fill: #000;
+}
+
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    z-index: 11;
+
+    &__list {
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &__item {
+        // margin-bottom: .5rem;
+        // border-top: 1px solid #222527;
+        // border-bottom: 1px solid #222527;
+    }
+
+    &__item:hover &__link {
+        color: #d3d3d3;
+    }
+
+    &__link {
+        color: #fff;
+        font-size: 6.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        width: 100%;
     }
 }
