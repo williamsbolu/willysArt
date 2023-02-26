@@ -31,6 +31,12 @@
                     <li><a href="#" class="nav__link--item">Store</a></li>
                 </ul>
             </div>
+
+            <div class="hamburger d-md-none">
+                <span class="hamburger__bar"></span>
+                <span class="hamburger__bar"></span>
+                <span class="hamburger__bar"></span>
+            </div>
         </nav>
     </header>
 
@@ -156,6 +162,34 @@
     <footer class="section-footer">
         <p>&copy; Willysart 2023.</p>
     </footer>
+
+    <div id="nav-menu" class="nav-menu nav-inactive">
+        <button class="nav-cancel">
+            <svg class="modal__icon-cancel">
+                <use xlink:href="img/sprite.svg#icon-x"></use>
+            </svg>
+        </button>
+
+        <ul class="nav-menu__list">
+            <li class="nav-menu__item"><a href="" class="nav-menu__link">Works</a></li>
+            <li class="nav-menu__item"><a href="" class="nav-menu__link">Contact</a></li>
+            <li class="nav-menu__item"><a href="" class="nav-menu__link">Store</a></li>
+
+            <li class="nav-menu__item">
+                <a href="" class="nav-menu--icons">
+                    <svg class="modal__icon-cancel">
+                        <use xlink:href="img/sprite.svg#icon-instagram"></use>
+                    </svg>
+                </a>
+                <a href="" class="nav-menu--icons">
+                    <svg class="modal__icon-cancel">
+                        <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+
+    </div>
 
     <div class="modal remove-display" id="modal">
         <button class="modal__button--cancel">

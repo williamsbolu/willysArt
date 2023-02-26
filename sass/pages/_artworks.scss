@@ -7,6 +7,10 @@
     background-repeat: no-repeat;
     margin-bottom: 1rem;
 
+    @media only screen and (max-width: $bp-576px) {
+        padding: 9rem 2rem;
+    }
+
     .display-box {
         display: flex;
         flex-direction: column;
@@ -18,11 +22,27 @@
             color: #F6F3ED;
             letter-spacing: 2px;
             font-weight: 600;
+
+            @media only screen and (max-width: $bp-768px) {
+                font-size: 4rem;
+            }
+
+            @media only screen and (max-width: $bp-576px) {
+                font-size: 3.2rem;
+            }
         }
 
         & p {
             font-size: 1.6rem;
             width: 50%;
+
+            @media only screen and (max-width: $bp-768px) {
+                width: 80%;
+            }
+
+            @media only screen and (max-width: $bp-576px) {
+                width: 100%;
+            }
         }
     }
 }
@@ -36,5 +56,15 @@
         font-weight: 600;
         font-size: 3.2rem;
         padding: 1.5rem 4rem;
+
+        @media only screen and (max-width: $bp-768px) {
+            font-size: 2.8rem;
+
+        }
+
+        @media only screen and (max-width: $bp-576px) {
+            font-size: 2.5rem;
+            padding: 1.5rem 2rem;
+        }
     }
 }

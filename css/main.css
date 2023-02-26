@@ -335,8 +335,17 @@ h3 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem; }
+  @media only screen and (max-width: 62.5em) {
+    .gallery {
+      grid-template-columns: repeat(3, 1fr); } }
+  @media only screen and (max-width: 48em) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr); } }
+  @media only screen and (max-width: 36em) {
+    .gallery {
+      grid-template-columns: 1fr; } }
   .gallery__item {
-    display: inline-block; }
+    margin-bottom: 0; }
     .gallery__item:hover {
       cursor: zoom-in; }
   .gallery__img {
@@ -905,6 +914,9 @@ button.nav-cancel svg {
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 1rem; }
+  @media only screen and (max-width: 36em) {
+    .section-display {
+      padding: 9rem 2rem; } }
   .section-display .display-box {
     display: flex;
     flex-direction: column;
@@ -915,9 +927,21 @@ button.nav-cancel svg {
       color: #F6F3ED;
       letter-spacing: 2px;
       font-weight: 600; }
+      @media only screen and (max-width: 48em) {
+        .section-display .display-box h1 {
+          font-size: 4rem; } }
+      @media only screen and (max-width: 36em) {
+        .section-display .display-box h1 {
+          font-size: 3.2rem; } }
     .section-display .display-box p {
       font-size: 1.6rem;
       width: 50%; }
+      @media only screen and (max-width: 48em) {
+        .section-display .display-box p {
+          width: 80%; } }
+      @media only screen and (max-width: 36em) {
+        .section-display .display-box p {
+          width: 100%; } }
 
 .section-gallery {
   margin-bottom: 4rem; }
@@ -927,6 +951,13 @@ button.nav-cancel svg {
     font-weight: 600;
     font-size: 3.2rem;
     padding: 1.5rem 4rem; }
+    @media only screen and (max-width: 48em) {
+      .section-gallery h2 {
+        font-size: 2.8rem; } }
+    @media only screen and (max-width: 36em) {
+      .section-gallery h2 {
+        font-size: 2.5rem;
+        padding: 1.5rem 2rem; } }
 
 .section__header {
   width: 60%;
