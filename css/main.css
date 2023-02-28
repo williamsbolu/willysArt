@@ -104,10 +104,15 @@ h3 {
 .btn--primary {
   background-color: #ee2a6d;
   color: #fff; }
+  .btn--primary:hover, .btn--primary:active {
+    background-color: #ee2a6d !important;
+    border-color: #ee2a6d !important; }
 
 .btn--primary-border {
   border: 1px solid #ee2a6d;
   color: #fff; }
+  .btn--primary-border:active, .btn--primary-border:hover {
+    border: 1px solid #ee2a6d !important; }
 
 .btn--secondary {
   background-color: #27bcec;
@@ -130,7 +135,7 @@ h3 {
   background-color: #1a1a1a;
   cursor: pointer;
   display: grid;
-  grid-template-rows: 40rem min-content;
+  grid-template-rows: 35rem min-content;
   transition: transform .3s; }
   .card:hover {
     transform: translateY(-1.5rem) scale(1.03); }
@@ -148,9 +153,9 @@ h3 {
     background-size: cover;
     background-position: center; }
     .card .card__picture--1 {
-      background-image: url(../../img/no-limits.jpg); }
+      background-image: url(../../img/too-sexy.jpg); }
     .card .card__picture--2 {
-      background-image: url(../../img//spaceships-img.jpg); }
+      background-image: url(../../img/rema-calmdown.jpg); }
     .card .card__picture--3 {
       background-image: url(../../img/samba.jpg); }
     .card .card__picture--4 {
@@ -270,7 +275,7 @@ h3 {
     font-size: 1.6rem; }
     .form__input:focus {
       outline: none; }
-  .form__button {
+  .form__button, .form__button:link, .form__button:visited, .form__button:active {
     border: none;
     width: 100%;
     padding: 1.5rem 0;
@@ -282,8 +287,8 @@ h3 {
     cursor: pointer;
     transition: background-color .3s;
     font-family: inherit; }
-    .form__button:hover {
-      background-color: #222; }
+  .form__button:hover {
+    background-color: #222; }
 
 #message {
   margin-top: 1.5rem; }
@@ -313,7 +318,7 @@ h3 {
     font-size: 1.6rem; }
     .form__input:focus {
       outline: none; }
-  .form__button {
+  .form__button, .form__button:link, .form__button:visited, .form__button:active {
     border: none;
     width: 100%;
     padding: 1.5rem 0;
@@ -325,8 +330,8 @@ h3 {
     cursor: pointer;
     transition: background-color .3s;
     font-family: inherit; }
-    .form__button:hover {
-      background-color: #222; }
+  .form__button:hover {
+    background-color: #222; }
 
 #message {
   margin-top: 1.5rem; }
@@ -598,6 +603,7 @@ h3 {
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 9;
+  overflow: hidden;
   display: flex;
   justify-content: center; }
   @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
@@ -677,7 +683,7 @@ h3 {
   transition: all .3s; }
 
 .remove-image {
-  transform: translateY(10rem);
+  transform: translateY(6rem);
   opacity: 0;
   transition: all .5s; }
   @media only screen and (max-width: 37.5em) {
@@ -872,10 +878,13 @@ button.nav-cancel svg {
     color: #bcbcbc; }
   .nav-menu__link {
     color: #fff;
-    font-size: 6.5rem;
+    font-size: 6rem;
     text-decoration: none;
     font-weight: 600;
     width: 100%; }
+    @media only screen and (max-width: 36em) {
+      .nav-menu__link {
+        font-size: 5rem; } }
   .nav-menu--icons {
     display: inline-block; }
     .nav-menu--icons:first-child {

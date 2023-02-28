@@ -135,10 +135,14 @@ button.nav-cancel svg {
 
     &__link {
         color: #fff;
-        font-size: 6.5rem;
+        font-size: 6rem;
         text-decoration: none;
         font-weight: 600;
         width: 100%;
+
+        @media only screen and (max-width: $bp-576px) {
+            font-size: 5rem;
+        }
     }
 
     &--icons {

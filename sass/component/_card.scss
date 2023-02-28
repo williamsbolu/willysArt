@@ -14,7 +14,7 @@
     background-color: #1a1a1a;
     cursor: pointer;
     display: grid;
-    grid-template-rows: 40rem min-content;
+    grid-template-rows: 35rem min-content;
     transition: transform .3s;
 
     &:hover {
@@ -42,11 +42,11 @@
         background-position: center;
 
         &--1 {
-            background-image: url(../../img/no-limits.jpg);
+            background-image: url(../../img/too-sexy.jpg);
         }
 
         &--2 {
-            background-image: url(../../img//spaceships-img.jpg);
+            background-image: url(../../img/rema-calmdown.jpg);
         }
 
         &--3 {

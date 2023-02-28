@@ -1,6 +1,6 @@
 //////////////////   Modal for the works section. ////////////////////////////////
 const cardsContainer = document.querySelector(".card__container");
-const slidesContainer = document.querySelector(".slides");
+const slidesContainer = document.querySelector(".card__slide");
 const galleryImgs = Array.from(document.querySelectorAll(".gallery__img"));
 const modal = document.querySelector(".modal");
 const modalImg = document.querySelector(".modal__img");
@@ -76,7 +76,7 @@ if (slidesContainer) {
     // if we click on the btn link.. return
     if (e.target.classList.contains("btn")) return;
 
-    const slidesElement = e.target.closest(".slide");
+    const slidesElement = e.target.closest(".card");
 
     if (!slidesElement) return; // if we dont get d card modal element
 
@@ -184,7 +184,7 @@ menuBtn.addEventListener("click", function () {
   nav.classList.add("nav-active");
 
   navLinks.forEach((link, index) => {
-    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+    link.style.animation = `navLinkFade 0.4s ease forwards ${index / 7 + 0.3}s`;
   });
 });
 

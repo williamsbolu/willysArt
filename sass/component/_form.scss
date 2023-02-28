@@ -35,7 +35,10 @@
         }
     }
 
-    &__button {
+    &__button,
+    &__button:link,
+    &__button:visited,
+    &__button:active {
         border: none;
         width: 100%;
         padding: 1.5rem 0;
@@ -47,10 +50,10 @@
         cursor: pointer;
         transition: background-color .3s;
         font-family: inherit;
+    }
 
-        &:hover {
-            background-color: #222;
-        }
+    &__button:hover {
+        background-color: #222;
     }
 }
 
